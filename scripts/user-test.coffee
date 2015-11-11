@@ -12,8 +12,8 @@ module.exports = (robot) ->
   robot.listenerMiddleware (context, next, done) ->
     res = context.response
     userId = res.message.user.id
-    if userId is userIds.john
-      res.reply 'intercepted a message from John.'
+    if userId is userIds.steve
+      res.reply 'duster module disengaged; unable to respond to dusty requests.'
       res.message.finish()
       done()
     else
