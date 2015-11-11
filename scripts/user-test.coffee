@@ -41,6 +41,8 @@ module.exports = (robot) ->
           res.reply 'duster module disengaged; unable to respond to dusty requests.'
           res.message.finish()
           done()
+    else
+      next(done)
 
   robot.respond /reset steve mode/i, (res) ->
     if res.message.user.id is users.steve.id
