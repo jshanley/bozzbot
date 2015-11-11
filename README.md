@@ -157,20 +157,7 @@ Where `<adapter>` is the name of your adapter without the `hubot-` prefix.
 
 ## Deployment
 
-    % heroku create --stack cedar
-    % git push heroku master
-
-If your Heroku account has been verified you can run the following to enable
-and add the Redis to Go addon to your app.
-
-    % heroku addons:add redistogo:nano
-
-If you run into any problems, checkout Heroku's [docs][heroku-node-docs].
-
-You'll need to edit the `Procfile` to set the name of your hubot.
-
-More detailed documentation can be found on the [deploying hubot onto
-Heroku][deploy-heroku] wiki page.
+I hooked this shit up to Heroku to auto-deploy when you commit to master. Ba-BOOM!
 
 ### Deploying to UNIX or Windows
 
