@@ -17,7 +17,7 @@ module.exports = (robot) ->
   robot.listenerMiddleware (context, next, done) ->
     res = context.response
     userId = res.message.user.id
-    if userId is users.john.id
+    if userId is users.steve.id
       now = Date.now()
       steveRequests = robot.brain.get('steveRequests') or []
       steveRequests = steveRequests.filter (r) -> r.date > (now - 3600000)
