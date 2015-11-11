@@ -22,17 +22,17 @@ module.exports = (robot) ->
       steveRequests = robot.brain.get('steveRequests') or []
       steveRequests = steveRequests.filter (r) -> r.date > (now - 3600000)
       switch steveRequests.length
-        when 0 then
+        when 0
           res.reply 'duster module stable; processing request...'
           steveRequests.push({ date: now })
           robot.brain.set('steveRequests', steveRequests)
           next(done)
-        when 1 then
+        when 1
           res.reply 'duster module dusty; processing (cough) request...'
           steveRequests.push({ date: now })
           robot.brain.set('steveRequests', steveRequests)
           next(done)
-        when 2 then
+        when 2
           res.reply 'duster module critical; shutdown imminent...'
           steveRequests.push({ date: now })
           robot.brain.set('steveRequests', steveRequests)
