@@ -43,5 +43,8 @@ module.exports = (robot) ->
           done()
 
   robot.respond /reset steve mode/i, (res) ->
-    robot.brain.set('steveRequests', [])
-    res.send 'OK. Duster module repaired.'
+    if res.message.user.id is users.steve.id
+      res.reply 'NAHHHHHHHHHHH'
+    else
+      res.send 'OK. Duster module repaired.'
+      robot.brain.set('steveRequests', [])
