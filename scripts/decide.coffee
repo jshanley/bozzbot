@@ -1,5 +1,6 @@
 module.exports = (robot) ->
-  robot.respond /decide/i, (res) ->
-    n = Math.random()
-    reply = if n > 0.5 then 'yes' else 'no'
-    res.reply reply
+  robot.respond /decide( (.+) vs\.? (.+))?/i, (res) ->
+    if res.match[1] and res.match[2] and res.match[3]
+      res.reply res.random [res.match[2],res.match[3]]
+    else
+      res.reply res.random ['yes','no']
