@@ -17,7 +17,8 @@ module.exports = (robot) ->
   robot.listenerMiddleware (context, next, done) ->
     res = context.response
     userId = res.message.user.id
-    if userId is users.steve.id
+    steveModeEnabled = robot.brain.get('steveModeEnabled')
+    if userId is users.steve.id and steveModeEnabled
       now = Date.now()
       steveRequests = robot.brain.get('steveRequests') or []
       steveRequests = steveRequests.filter (r) -> r.date > (now - 3600000)
@@ -50,3 +51,17 @@ module.exports = (robot) ->
     else
       res.send 'OK. Duster module repaired.'
       robot.brain.set('steveRequests', [])
+
+  robot.respond /enable steve mode/i, (res) ->
+    if res.message.user.id is users.steve.id
+      res.reply 'NAHHHHHHHHHHH'
+    else
+      res.send 'OK. Duster module installed.'
+      robot.brain.set('steveModeEnabled', true)
+
+  robot.respond /disable steve mode/i, (res) ->
+    if res.message.user.id is users.steve.id
+      res.reply 'NAHHHHHHHHHHH'
+    else
+      res.send ':rat:'
+      robot.brain.set('steveModeEnabled', false)
