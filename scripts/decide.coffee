@@ -11,11 +11,11 @@ module.exports = (robot) ->
 
   robot.respond /roll for (\S+)/i, (res) ->
     num = ~~(Math.random() * 100)
-    if match[1] is 'me'
+    if res.match[1] is 'me'
       res.reply num
     else
-      user = robot.brain.userForFuzzyName(match[1])
-      res.send '#{user}: #{num}' 
+      user = robot.brain.userForFuzzyName(res.match[1])
+      res.send '#{user}: #{num}'
 
   robot.respond /rps/i, (res) ->
     res.reply res.random ['rock','paper','scissors']
