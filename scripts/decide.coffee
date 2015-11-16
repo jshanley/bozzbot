@@ -9,9 +9,13 @@ module.exports = (robot) ->
     else
       res.reply res.random ['yes','no']
 
-  robot.respond /roll for me/i, (res) ->
+  robot.respond /roll for (\S+)/i, (res) ->
     num = ~~(Math.random() * 100)
-    res.reply num
+    if match[1] is 'me'
+      res.reply num
+    else
+      user = robot.brain.userForFuzzyName(match[1])
+      res.send '#{user}: #{num}' 
 
   robot.respond /rps/i, (res) ->
     res.reply res.random ['rock','paper','scissors']
