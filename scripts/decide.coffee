@@ -10,7 +10,8 @@ module.exports = (robot) ->
       res.reply res.random ['yes','no']
 
   robot.respond /roll for (\S+)/i, (res) ->
-    num = ~~(Math.random() * 100)
+    sides = robot.brain.get('dieSides') or 20
+    num = ~~(Math.random() * sides) + 1
     user = robot.brain.userForName(res.match[1])
     if res.match[1] is 'me'
       res.reply num
@@ -18,6 +19,11 @@ module.exports = (robot) ->
       res.send "#{user.name}: #{num}"
     else
       res.send "no users found with name: #{res.match[1]}"
+
+  robot.respond /set die sides (\d+)/i, (res) ->
+    sides = parseInt(res.match[1], 10)
+    robot.brain.set('dieSides', sides)
+    res.send "Die set to #{sides} sides."
 
   robot.respond /rps/i, (res) ->
     res.reply res.random ['rock','paper','scissors']
