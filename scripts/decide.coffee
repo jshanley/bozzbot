@@ -1,4 +1,5 @@
 module.exports = (robot) ->
+
   robot.respond /decide( (.+) (?:vs\.?|or) (.+))?(.+\,.+\,.+)?/i, (res) ->
     if res.match[1] and res.match[2] and res.match[3]
       res.reply res.random [res.match[2],res.match[3]]
@@ -11,3 +12,6 @@ module.exports = (robot) ->
   robot.respond /^roll$/i, (res) ->
     num = ~~(Math.random() * 100)
     res.reply num
+
+  robot.respond /rps/i, (res) ->
+    res.reply res.random ['rock','paper','scissors']
