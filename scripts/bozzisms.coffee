@@ -4,7 +4,7 @@ module.exports = (robot) ->
     'I love twinkies.'
     'It\'s not my birthday.'
     'Ya bastard!'
-    'I\'m not going to college'
+    'I\'m not going to college.'
     'No! Bastard!'
   ]
 
