@@ -8,5 +8,5 @@ module.exports = (robot) ->
     'No! Bastard!'
   ]
 
-  robot.hear /^bozz$/ ->
+  robot.hear /^bozz$/i, (res) ->
     res.send res.random bozzisms
