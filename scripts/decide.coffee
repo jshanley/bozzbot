@@ -14,7 +14,7 @@ module.exports = (robot) ->
     if res.match[1] is 'me'
       res.reply num
     else
-      user = robot.brain.userForFuzzyName(res.match[1])
+      user = robot.brain.userForName(res.match[1])
       res.send '#{user}: #{num}'
 
   robot.respond /rps/i, (res) ->
