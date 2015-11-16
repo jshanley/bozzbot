@@ -9,7 +9,7 @@ module.exports = (robot) ->
     else
       res.reply res.random ['yes','no']
 
-  robot.respond /roll for (\S+)/i, (res) ->
+  robot.respond /roll(?: for (\S+))?/i, (res) ->
     sides = robot.brain.get('dieSides') or 20
     num = ~~(Math.random() * sides) + 1
     user = robot.brain.userForName(res.match[1])
