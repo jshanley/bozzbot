@@ -9,7 +9,7 @@ module.exports = (robot) ->
     else
       res.reply res.random ['yes','no']
 
-  robot.respond /^roll$/i, (res) ->
+  robot.respond /roll for me/i, (res) ->
     num = ~~(Math.random() * 100)
     res.reply num
 
