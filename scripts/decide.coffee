@@ -15,7 +15,7 @@ module.exports = (robot) ->
       res.reply num
     else
       user = robot.brain.userForName(res.match[1])
-      res.send '#{user}: #{num}'
+      res.send "#{user}: #{num}"
 
   robot.respond /rps/i, (res) ->
     res.reply res.random ['rock','paper','scissors']
