@@ -6,6 +6,9 @@ module.exports = (robot) ->
     'Ya bastard!'
     'I\'m not going to college.'
     'No! Bastard!'
+    'Okay! Ya think yer funny? Well yer an idiot!'
+    'Shut up! It\'s not my birthday.'
+    'No! Wha- pfft! Ya- Ya bastard!'
   ]
 
   robot.hear /^(?:bozz|jack)\!*$/i, (res) ->
