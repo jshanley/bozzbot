@@ -135,7 +135,7 @@ module.exports = (robot) ->
       bottomText = split[1]
     else
       bottomText = text
-    memeGenerator msg, 'BMZMBA', topText, bottomText, (url) ->
+    memeGenerator msg, 'iWBIPQ', topText, bottomText, (url) ->
       msg.send url
 
 
