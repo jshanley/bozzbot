@@ -4,6 +4,6 @@ module.exports = (robot) ->
       message: res.message
       content:
         text: 'This is an attachment.'
-        fallback: 'This will be shown if the attachment cannot display.'
+        fallback: 'This will be shown if the attachment cannot display...'
         color: '#22aaee'
     robot.emit 'slack-attachment', payload
