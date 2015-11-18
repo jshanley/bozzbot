@@ -126,7 +126,7 @@ module.exports = (robot) ->
       msg.send url
 
   robot.respond /steve meme (.+)/i, (msg) ->
-    memeGenerator msg, 'BMZMBA', msg.match[1], '', (url) ->
+    memeGenerator msg, 'BMZMBA', '', msg.match[1], (url) ->
       msg.send url
 
 
