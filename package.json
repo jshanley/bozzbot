@@ -6,6 +6,7 @@
   "description": "I live at the depot",
   "dependencies": {
     "ejs": "^2.3.4",
+    "express": "^4.13.3",
     "hubot": "^2.16.0",
     "hubot-auth": "^1.2.0",
     "hubot-diagnostics": "0.0.1",
