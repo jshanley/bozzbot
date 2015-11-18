@@ -45,10 +45,12 @@ When you have lots of scripts installed this process can be quite labour
 intensive. The following shell command can be used as a stop gap until an
 easier way to do this has been implemented.
 
-    grep -o 'hubot-[a-z0-9_-]\+' external-scripts.json | \
-      xargs -n1 -I {} sh -c 'sed -n "/^# Configuration/,/^#$/ s/^/{} /p" \
-          $(find node_modules/{}/ -name "*.coffee")' | \
-        awk -F '#' '{ printf "%-25s %s\n", $1, $2 }'
+``` bash
+grep -o 'hubot-[a-z0-9_-]\+' external-scripts.json | \
+  xargs -n1 -I {} sh -c 'sed -n "/^# Configuration/,/^#$/ s/^/{} /p" \
+      $(find node_modules/{}/ -name "*.coffee")' | \
+    awk -F '#' '{ printf "%-25s %s\n", $1, $2 }'
+```
 
 How to set environment variables will be specific to your operating system.
 Rather than recreate the various methods and best practices in achieving this,
@@ -93,7 +95,7 @@ explicitly specify which scripts from a package should be included. The example
 below, for example, will only activate two of the six available scripts inside
 the `hubot-fun` plugin, but all four of those in `hubot-auto-deploy`.
 
-```json
+``` json
 {
   "hubot-fun": [
     "crazy",
@@ -128,7 +130,9 @@ you will need to add the Redis to Go addon on Heroku which requires a verified
 account or you can create an account at [Redis to Go][redistogo] and manually
 set the `REDISTOGO_URL` variable.
 
-    % heroku config:add REDISTOGO_URL="..."
+``` bash
+% heroku config:add REDISTOGO_URL="..."
+```
 
 If you don't need any persistence feel free to remove the `hubot-redis-brain`
 from `external-scripts.json` and you don't need to worry about redis at all.
@@ -149,7 +153,9 @@ the adapter package as a dependency to the `package.json` file in the
 Once you've added the dependency with `npm install --save` to install it you
 can then run hubot with the adapter.
 
-    % bin/hubot -a <adapter>
+``` bash
+% bin/hubot -a <adapter>
+```
 
 Where `<adapter>` is the name of your adapter without the `hubot-` prefix.
 
@@ -179,19 +185,25 @@ links to the adapters can be found on [Hubot Adapters][hubot-adapters].
 Create a separate Campfire user for your bot and get their token from the web
 UI.
 
-    % heroku config:add HUBOT_CAMPFIRE_TOKEN="..."
+``` bash
+% heroku config:add HUBOT_CAMPFIRE_TOKEN="..."
+```
 
 Get the numeric IDs of the rooms you want the bot to join, comma delimited. If
 you want the bot to connect to `https://mysubdomain.campfirenow.com/room/42`
 and `https://mysubdomain.campfirenow.com/room/1024` then you'd add it like
 this:
 
-    % heroku config:add HUBOT_CAMPFIRE_ROOMS="42,1024"
+``` bash
+% heroku config:add HUBOT_CAMPFIRE_ROOMS="42,1024"
+```
 
 Add the subdomain hubot should connect to. If you web URL looks like
 `http://mysubdomain.campfirenow.com` then you'd add it like this:
 
-    % heroku config:add HUBOT_CAMPFIRE_ACCOUNT="mysubdomain"
+``` bash
+% heroku config:add HUBOT_CAMPFIRE_ACCOUNT="mysubdomain"
+```
 
 [hubot-adapters]: https://github.com/github/hubot/blob/master/docs/adapters.md
 
