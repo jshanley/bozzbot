@@ -126,7 +126,16 @@ module.exports = (robot) ->
       msg.send url
 
   robot.respond /steve meme (.+)/i, (msg) ->
-    memeGenerator msg, 'BMZMBA', '', msg.match[1], (url) ->
+    text = msg.match[1]
+    split = text.split('|')
+    topText = ''
+    bottomText = ''
+    if split.length is 2
+      topText = split[0]
+      bottomText = split[1]
+    else
+      bottomText = text
+    memeGenerator msg, 'BMZMBA', topText, bottomText, (url) ->
       msg.send url
 
 
