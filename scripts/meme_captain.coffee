@@ -28,6 +28,8 @@
 #   hubot IF <text> THAT'D BE GREAT - Generates Lumberg
 #   hubot MUCH <text> (SO|VERY) <text> - Generates Doge
 #   hubot <text> EVERYWHERE - Generates Buzz Lightyear
+#   hubot steve meme <text>|<text> - Generates Steve meme
+#   hubot chris's dad <text>|<text> - Generates Chris's dad meme
 #
 # Author:
 #   bobanj, ericjsilva
@@ -137,7 +139,19 @@ module.exports = (robot) ->
       bottomText = text
     memeGenerator msg, 'iWBIPQ', topText, bottomText, (url) ->
       msg.send url
-
+  
+  robot.respond /chris's dad (.+)/i, (msg) ->
+    text = msg.match[1]
+    split = text.split('|')
+    topText = ''
+    bottomText = ''
+    if split.length is 2
+      topText = split[0]
+      bottomText = split[1]
+    else
+      topText = text
+    memeGenerator msg, 'zoDMAA', topText, bottomText, (url) ->
+      msg.send url
 
 memeGeneratorUrl = 'http://memecaptain.com/gend_images'
 
