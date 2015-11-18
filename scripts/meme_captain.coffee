@@ -125,6 +125,10 @@ module.exports = (robot) ->
     memeGenerator msg, 'yDcY5w', msg.match[1], msg.match[2], (url) ->
       msg.send url
 
+  robot.respond /steve meme (.+)/i, (msg) ->
+    memeGenerator msg, 'BMZMBA', msg.match[1], '', (url) ->
+      msg.send url
+
 
 memeGeneratorUrl = 'http://memecaptain.com/gend_images'
 
