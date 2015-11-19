@@ -7,25 +7,44 @@
     <style>
       body {
         margin: 0;
+        padding: 1em;
         text-align: center;
         background-color: #efefef;
       }
       svg {
+        width: 541px;
         max-width: 100%;
       }
-      .image-wrapper {
-        display: inline-block;
-        position: relative;
-        padding: 1em;
-      }
-      .bozzism {
-        position: absolute;
-        top: 220px;
-        right: 0;
+
+      svg text {
+        font-family: monospace;
+        font-size: 18px;
       }
     </style>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
   </head>
-  <body>
-    New HuBozz image in progress...
+  <body data-bozzisms="<%= JSON.stringify(bozzisms) %>">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink" viewBox="0 0 541 807">
+      <image x="0" y="0" xlink:href="/assets/hubozz.png" width="541" height="807" />
+      <path id="textPath">
+        <animate attributeName="d" from="m70,160 h0" to="m70,160 h400" dur="4.0s" begin="0s" repeatCount="indefinite" onrepeat="swapText()" />
+      </path>
+      <text>
+        <textPath xlink:href="#textPath">
+          <%= bozzisms[~~(Math.random() * bozzisms.length)] %>
+        </textPath>
+      </text>
+    </svg>
+
+    <script>
+
+      var bozzisms = $('body').data('bozzisms');
+
+      function swapText() {
+        var text = bozzisms[~~(Math.random() * bozzisms.length)];
+        $('svg text textPath').text(text);
+      }
+
+    </script>
   </body>
 </html>
