@@ -128,30 +128,27 @@ module.exports = (robot) ->
       msg.send url
 
   robot.respond /steve meme (.+)/i, (msg) ->
-    text = msg.match[1]
-    split = text.split('|')
-    topText = ''
-    bottomText = ''
-    if split.length is 2
-      topText = split[0]
-      bottomText = split[1]
-    else
-      bottomText = text
-    memeGenerator msg, 'iWBIPQ', topText, bottomText, (url) ->
-      msg.send url
-  
+    makeCustomSplitMeme(msg, 'iWBIPQ')
+
   robot.respond /chris's dad (.+)/i, (msg) ->
-    text = msg.match[1]
-    split = text.split('|')
-    topText = ''
-    bottomText = ''
-    if split.length is 2
-      topText = split[0]
-      bottomText = split[1]
-    else
-      topText = text
-    memeGenerator msg, 'NjdUIw', topText, bottomText, (url) ->
-      msg.send url
+    makeCustomSplitMeme(msg, 'NjdUIw')
+
+  robot.respond /buddy (.+)/i, (msg) ->
+    makeCustomSplitMeme(msg, 'uQK6Dw')
+
+
+makeCustomSplitMeme = (msg, code) ->
+  text = msg.match[1]
+  split = text.split('|')
+  topText = ''
+  bottomText = ''
+  if split.length is 2
+    topText = split[0]
+    bottomText = split[1]
+  else
+    topText = text
+  memeGenerator msg, code, topText, bottomText, (url) ->
+    msg.send url
 
 memeGeneratorUrl = 'http://memecaptain.com/gend_images'
 
