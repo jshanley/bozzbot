@@ -151,19 +151,6 @@ makeCustomSplitMeme = (msg, code) ->
   memeGenerator msg, code, topText, bottomText, (url) ->
     msg.send url
 
-  robot.respond /buddy (.+)/i, (msg) ->
-    text = msg.match[1]
-    split = text.split('|')
-    topText = ''
-    bottomText = ''
-    if split.length is 2
-      topText = split[0]
-      bottomText = split[1]
-    else
-      topText = text
-    memeGenerator msg, 'uQK6Dw', topText, bottomText, (url) ->
-      msg.send url
-
 memeGeneratorUrl = 'http://memecaptain.com/gend_images'
 
 getDataPayload = (imageName, topText, botText) ->
