@@ -30,6 +30,7 @@
 #   hubot <text> EVERYWHERE - Generates Buzz Lightyear
 #   hubot steve meme <text>|<text> - Generates Steve meme
 #   hubot chris's dad <text>|<text> - Generates Chris's dad meme
+#   hubot buddy <text>|<text> - Generates Jack Bozz buddy meme
 #
 # Author:
 #   bobanj, ericjsilva
