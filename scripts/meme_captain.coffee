@@ -30,6 +30,7 @@
 #   hubot <text> EVERYWHERE - Generates Buzz Lightyear
 #   hubot steve meme <text>|<text> - Generates Steve meme
 #   hubot chris's dad <text>|<text> - Generates Chris's dad meme
+#   hubot buddy <text>|<text> - Generates Jack Bozz buddy meme
 #
 # Author:
 #   bobanj, ericjsilva
@@ -151,6 +152,19 @@ module.exports = (robot) ->
     else
       topText = text
     memeGenerator msg, 'NjdUIw', topText, bottomText, (url) ->
+      msg.send url
+
+  robot.respond /buddy (.+)/i, (msg) ->
+    text = msg.match[1]
+    split = text.split('|')
+    topText = ''
+    bottomText = ''
+    if split.length is 2
+      topText = split[0]
+      bottomText = split[1]
+    else
+      topText = text
+    memeGenerator msg, 'uQK6Dw', topText, bottomText, (url) ->
       msg.send url
 
 memeGeneratorUrl = 'http://memecaptain.com/gend_images'
