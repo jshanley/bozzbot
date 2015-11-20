@@ -1,3 +1,22 @@
+# Description:
+#   Have Bozz decide things
+#
+# Dependencies:
+#   None
+#
+# Configuration:
+#   None
+#
+# Commands:
+#   bozz decide - Bozz answers "yes" or "no"
+#   bozz decide <A> or <B> - Bozz picks A or B
+#   bozz decide <A> vs <B> - Bozz picks A or B
+#   bozz decide <a>,<b>,<c>,...,<z> - Bozz picks one of the choices provided
+#   bozz roll - Roll a die for yourself
+#   bozz roll for <username> - Roll a die for someone else
+#   bozz set die sides <n> - Set the number of sides to use for rolls
+#   bozz rps - Bozz replies "rock", "paper", or "scissors"
+
 module.exports = (robot) ->
 
   robot.respond /decide( (.+) (?:vs\.?|or) (.+))?(.+\,.+\,.+)?/i, (res) ->

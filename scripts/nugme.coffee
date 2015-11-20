@@ -9,8 +9,8 @@
 #   None
 #
 # Commands:
-#   hubot nug me - Receive a nug
-#   hubot nug bomb N - get N nugs
+#   bozz nug me - Receive a nug
+#   bozz nug bomb N - get N nugs
 
 module.exports = (robot) ->
 

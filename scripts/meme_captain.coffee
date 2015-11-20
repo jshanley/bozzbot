@@ -5,32 +5,32 @@
 #   None
 #
 # Commands:
-#   hubot Y U NO <text> - Generates the Y U NO GUY with the bottom caption of <text>
-#   hubot I don't always <something> but when i do <text> - Generates The Most Interesting man in the World
-#   hubot <text> (SUCCESS|NAILED IT) - Generates success kid with the top caption of <text>
-#   hubot <text> ALL the <things> - Generates ALL THE THINGS
-#   hubot <text> TOO DAMN <high> - Generates THE RENT IS TOO DAMN HIGH guy
-#   hubot Yo dawg <text> so <text> - Generates Yo Dawg
-#   hubot All your <text> are belong to <text> - All your <text> are belong to <text>
-#   hubot If <text>, <word that can start a question> <text>? - Generates Philosoraptor
-#   hubot <text>, BITCH PLEASE <text> - Generates Yao Ming
-#   hubot <text>, COURAGE <text> - Generates Courage Wolf
-#   hubot ONE DOES NOT SIMPLY <text> - Generates Boromir
-#   hubot IF YOU <text> GONNA HAVE A BAD TIME - Ski Instructor
-#   hubot IF YOU <text> TROLLFACE <text> - Troll Face
-#   hubot Aliens guy <text> - Aliens guy weighs in on something
-#   hubot Brace yourself <text> - Ned Stark braces for <text>
-#   hubot Iron Price <text> - To get <text>? Pay the iron price!
-#   hubot Not sure if <something> or <something else> - Generates a Futurama Fry meme
-#   hubot <text>, AND IT'S GONE - Bank Teller
-#   hubot WHAT IF I TOLD YOU <text> - Morpheus What if I told you
-#   hubot WTF <text> - Picard WTF
-#   hubot IF <text> THAT'D BE GREAT - Generates Lumberg
-#   hubot MUCH <text> (SO|VERY) <text> - Generates Doge
-#   hubot <text> EVERYWHERE - Generates Buzz Lightyear
-#   hubot steve meme <text>|<text> - Generates Steve meme
-#   hubot chris's dad <text>|<text> - Generates Chris's dad meme
-#   hubot buddy <text>|<text> - Generates Jack Bozz buddy meme
+#   bozz Y U NO <text> - Generates the Y U NO GUY with the bottom caption of <text>
+#   bozz I don't always <something> but when i do <text> - Generates The Most Interesting man in the World
+#   bozz <text> (SUCCESS|NAILED IT) - Generates success kid with the top caption of <text>
+#   bozz <text> ALL the <things> - Generates ALL THE THINGS
+#   bozz <text> TOO DAMN <high> - Generates THE RENT IS TOO DAMN HIGH guy
+#   bozz Yo dawg <text> so <text> - Generates Yo Dawg
+#   bozz All your <text> are belong to <text> - All your <text> are belong to <text>
+#   bozz If <text>, <word that can start a question> <text>? - Generates Philosoraptor
+#   bozz <text>, BITCH PLEASE <text> - Generates Yao Ming
+#   bozz <text>, COURAGE <text> - Generates Courage Wolf
+#   bozz ONE DOES NOT SIMPLY <text> - Generates Boromir
+#   bozz IF YOU <text> GONNA HAVE A BAD TIME - Ski Instructor
+#   bozz IF YOU <text> TROLLFACE <text> - Troll Face
+#   bozz Aliens guy <text> - Aliens guy weighs in on something
+#   bozz Brace yourself <text> - Ned Stark braces for <text>
+#   bozz Iron Price <text> - To get <text>? Pay the iron price!
+#   bozz Not sure if <something> or <something else> - Generates a Futurama Fry meme
+#   bozz <text>, AND IT'S GONE - Bank Teller
+#   bozz WHAT IF I TOLD YOU <text> - Morpheus What if I told you
+#   bozz WTF <text> - Picard WTF
+#   bozz IF <text> THAT'D BE GREAT - Generates Lumberg
+#   bozz MUCH <text> (SO|VERY) <text> - Generates Doge
+#   bozz <text> EVERYWHERE - Generates Buzz Lightyear
+#   bozz steve meme <text>|<text> - Generates Steve meme
+#   bozz chris's dad <text>|<text> - Generates Chris's dad meme
+#   bozz buddy <text>|<text> - Generates Jack Bozz buddy meme
 #
 # Author:
 #   bobanj, ericjsilva
