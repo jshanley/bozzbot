@@ -1,18 +1,6 @@
 module.exports = (robot) ->
 
-  users =
-    nate:
-      id: 'U0E83CCFN'
-    jake:
-      id: 'U0E8TU3NV'
-    jordan:
-      id: 'U0E8J501Y'
-    mike:
-      id: 'U0E88F2BC'
-    steve:
-      id: 'U0E89CVJS'
-    john:
-      id: 'U0E880XRD'
+  users = require('../data/users.json');
 
   robot.listenerMiddleware (context, next, done) ->
     res = context.response
