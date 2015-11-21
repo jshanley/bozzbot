@@ -8,6 +8,7 @@ module.exports = (robot) ->
      when "@rat_boy" then return "http://i.imgur.com/8ynf6LR.gif"
      when "rat_boy" then return "http://i.imgur.com/8ynf6LR.gif"
      when "rat boy" then return "http://i.imgur.com/8ynf6LR.gif"
+     when "boy" then return "http://i.imgur.com/8ynf6LR.gif"
      when "steve" then return "http://i.imgur.com/8ynf6LR.gif"
      when "@mikelenehan" then return "http://i.imgur.com/eMq9jwR.gif"
      when "mikelenehan" then return "http://i.imgur.com/eMq9jwR.gif"
