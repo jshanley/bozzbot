@@ -26,7 +26,7 @@ module.exports = (robot) ->
     
 
  
- robot.respond /stunner(.* (\w+))/i, (res) ->
+ robot.respond /.*stunner(.* (\w+))/i, (res) ->
    if res.match[1]
      if res.match[2]
        res.send stunner_generator(res.match[2])
