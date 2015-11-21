@@ -12,6 +12,7 @@ module.exports = (robot) ->
      when "@mikelenehan" then return "http://i.imgur.com/eMq9jwR.gif"
      when "mikelenehan" then return "http://i.imgur.com/eMq9jwR.gif"
      when "mike" then return "http://i.imgur.com/eMq9jwR.gif"
+     when "lenny" then return "http://i.imgur.com/eMq9jwR.gif"
      when "@jbizzy11" then return "http://i.imgur.com/n4zRyjK.gif"
      when "jbizzy11" then return "http://i.imgur.com/n4zRyjK.gif"
      when "jake" then return "http://i.imgur.com/n4zRyjK.gif"
@@ -25,7 +26,7 @@ module.exports = (robot) ->
     
 
  
- robot.respond /stunner( (\S+))?/i, (res) ->
+ robot.respond /stunner( (.+))?/i, (res) ->
    if res.match[1]
      if res.match[2]
        res.reply stunner_generator(res.match[2])
