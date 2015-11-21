@@ -29,8 +29,8 @@ module.exports = (robot) ->
  robot.respond /stunner( (.+))?/i, (res) ->
    if res.match[1]
      if res.match[2]
-       res.reply stunner_generator(res.match[2])
+       res.send stunner_generator(res.match[2])
      else
-       res.reply "https://media.giphy.com/media/1zMHJaMEdlsL6/giphy.gif"
+       res.send "https://media.giphy.com/media/1zMHJaMEdlsL6/giphy.gif"
    else
-     res.reply "https://media.giphy.com/media/1zMHJaMEdlsL6/giphy.gif"
+     res.send "https://media.giphy.com/media/1zMHJaMEdlsL6/giphy.gif"
