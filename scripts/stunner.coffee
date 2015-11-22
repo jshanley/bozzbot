@@ -11,11 +11,15 @@ module.exports = (robot) ->
 
  robot.respond /.*stunner( .+)?/i, (res) ->
    if res.match[1]
-     users = robot.brain.getAllUsersInString(res.match[1])
-     if users and users.length
-       users.map (user) ->
-         res.send stunners[user]
+     if res.match[1].match(/bomb/i)
+       for user, stunner in stunners
+         res.send stunner
      else
-       res.send stunners.blank
+       users = robot.brain.getAllUsersInString(res.match[1])
+       if users and users.length
+         users.map (user) ->
+           res.send stunners[user]
+       else
+         res.send stunners.blank
    else
      res.send stunners.blank
