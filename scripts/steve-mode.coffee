@@ -1,12 +1,14 @@
+users = require('../data/users.json')
+
 module.exports = (robot) ->
 
-  users = require('../data/users.json');
+  steve = users.find (u) -> u.slug is 'steve'
 
   robot.listenerMiddleware (context, next, done) ->
     res = context.response
     userId = res.message.user.id
     steveModeEnabled = robot.brain.get('steveModeEnabled')
-    if userId is users.steve.id and steveModeEnabled
+    if userId is steve.id and steveModeEnabled
       now = Date.now()
       steveRequests = robot.brain.get('steveRequests') or []
       steveRequests = steveRequests.filter (r) -> r.date > (now - 3600000)
@@ -34,21 +36,21 @@ module.exports = (robot) ->
       next(done)
 
   robot.respond /reset steve mode/i, (res) ->
-    if res.message.user.id is users.steve.id
+    if res.message.user.id is steve.id
       res.reply 'NAHHHHHHHHHHH'
     else
       res.send 'OK. Duster module repaired.'
       robot.brain.set('steveRequests', [])
 
   robot.respond /enable steve mode/i, (res) ->
-    if res.message.user.id is users.steve.id
+    if res.message.user.id is steve.id
       res.reply 'NAHHHHHHHHHHH'
     else
       res.send 'OK. Duster module installed.'
       robot.brain.set('steveModeEnabled', true)
 
   robot.respond /disable steve mode/i, (res) ->
-    if res.message.user.id is users.steve.id
+    if res.message.user.id is steve.id
       res.reply 'NAHHHHHHHHHHH'
     else
       res.send ':rat:'
