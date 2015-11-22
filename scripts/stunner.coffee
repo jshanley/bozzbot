@@ -1,3 +1,17 @@
+# Description:
+#   Stunnerz
+#
+# Dependencies:
+#   None
+#
+# Configuration:
+#   None
+#
+# Commands:
+#   bozz stunner <user> - stunners a user
+#   bozz stunner <users...> - stunners any users mentioned
+#   bozz stunner bomb - stunners everyone
+
 stunners =
   jake: "http://i.imgur.com/n4zRyjK.gif"
   john: "http://i.imgur.com/EZqglR8.gif"
