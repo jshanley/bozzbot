@@ -12,7 +12,11 @@ module.exports = (robot) => {
     emojiName = emojiName.replace(/\:/g, '');
     res.http(`https://slack.com/api/emoji.list?token=${slackToken}`)
       .get()(function(err, res, body) {
+        console.log('err', err);
+        console.log('res', res);
+        console.log('body', body);
         let emoji = body.emoji;
+        console.log('emoji', emoji);
         let emojiUrl = emoji[emojiName];
         if (emojiUrl) {
           if (emojiUrl.slice(0,6) === 'alias:') {
