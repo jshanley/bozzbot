@@ -15,7 +15,8 @@ module.exports = (robot) => {
         console.log('err', err);
         console.log('res', res);
         console.log('body', body);
-        let emoji = body.emoji;
+        var parsedBody = JSON.parse(body);
+        let emoji = parsedBody.emoji;
         console.log('emoji', emoji);
         let emojiUrl = emoji[emojiName];
         if (emojiUrl) {
