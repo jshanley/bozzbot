@@ -9,11 +9,10 @@ module.exports = (robot) => {
 
   robot.respond(/emoji url for (.+)/i, (res) => {
     let emojiName = res.match[1];
-    emojiName = emojiName.replace(/\:/g, '');
+    emojiName = emojiName.replace(/\:/g, '').trim()
     res.http(`https://slack.com/api/emoji.list?token=${slackToken}`)
-      .get()(function(err, res, body) {
+      .get()(function(err, r, body) {
         console.log('err', err);
-        console.log('res', res);
         console.log('body', body);
         var parsedBody = JSON.parse(body);
         let emoji = parsedBody.emoji;
