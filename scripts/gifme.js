@@ -61,7 +61,6 @@ module.exports = (robot) => {
     let emojiName = emoji.replace(/\:/g, '').trim()
     getEmojiUrl(emojiName)
       .then((emojiUrl) => {
-        res.send('Ok, hang on a sec...');
         getGifUrl(gifName, emojiUrl)
           .then((gifUrl) => {
             res.send(gifUrl)
