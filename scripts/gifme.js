@@ -65,15 +65,7 @@ module.exports = (robot) => {
         res.send('Ok, hang on a sec...');
         getGifUrl(gifName, emojiUrl)
           .then((gifUrl) => {
-            let payload = {
-              message: res.message,
-              content: {
-                text: `<${gifUrl}>`,
-                unfurl_media: true,
-                fallback: 'There should be a gif here...'
-              }
-            }
-            robot.emit('slack-attachment', payload);
+            res.send(`<${gifUrl}>`)
           })
           .catch((msg) => res.send(msg))
       })
