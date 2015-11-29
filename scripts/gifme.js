@@ -3,8 +3,6 @@
 
 'use strict';
 
-let path = require('path');
-
 let slackToken = process.env.HUBOT_SLACK_TOKEN;
 let gifAppUrl = process.env.GIFHEAD_APPLICATION_URL;
 
@@ -49,7 +47,8 @@ module.exports = (robot) => {
           } else {
             let parsedBody = JSON.parse(body);
             let gifPath = parsedBody.gif;
-            resolve(path.join(gifAppUrl, gifPath));
+            let gifUrl = gifAppUrl + gifPath;
+            resolve(gifUrl);
           }
         })
     })
@@ -65,7 +64,7 @@ module.exports = (robot) => {
         res.send('Ok, hang on a sec...');
         getGifUrl(gifName, emojiUrl)
           .then((gifUrl) => {
-            res.send(`<${gifUrl}>`)
+            res.send(gifUrl)
           })
           .catch((msg) => res.send(msg))
       })
