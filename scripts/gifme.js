@@ -68,7 +68,8 @@ module.exports = (robot) => {
             let payload = {
               message: res.message,
               content: {
-                image_url: gifUrl,
+                text: gifUrl,
+                unfurl_media: true,
                 fallback: 'There should be a gif here...'
               }
             }
