@@ -55,6 +55,22 @@ module.exports = (robot) => {
     return promise;
   }
 
+  robot.respond(/gif list/i, (res) => {
+    robot.http(`${gifAppUrl}/api`)
+      .get()(function(err, r, body) {
+        if (err) {
+          res.send('Error looking up gifs.')
+        } else {
+          let parsedBody = JSON.parse(body);
+          if (parsedBody && parsedBody.length) {
+            parsedBody.map(entry => res.send(entry.name));
+          } else {
+            res.send('Baby! Your API broke...');
+          }
+        }
+      })
+  })
+
   robot.respond(/gif (\S+) (\S+)/i, (res) => {
     let gifName = res.match[1];
     let emoji = res.match[2];
