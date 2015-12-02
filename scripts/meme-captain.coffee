@@ -31,6 +31,7 @@
 #   bozz steve meme <text>|<text> - Generates Steve meme
 #   bozz chris's dad <text>|<text> - Generates Chris's dad meme
 #   bozz buddy <text>|<text> - Generates Jack Bozz buddy meme
+#   bozz i like babies <text>|<text> - Generates I like babies meme
 #
 # Author:
 #   bobanj, ericjsilva
@@ -137,6 +138,8 @@ module.exports = (robot) ->
   robot.respond /buddy (.+)/i, (msg) ->
     makeCustomSplitMeme(msg, 'uQK6Dw')
 
+  robot.respond /i like babies (.+)/i, (msg) ->
+    makeCustomSplitMeme(msg, 'qkqezg')
 
 makeCustomSplitMeme = (msg, code) ->
   text = msg.match[1]
