@@ -33,6 +33,7 @@
 #   bozz buddy <text>|<text> - Generates Jack Bozz buddy meme
 #   bozz i like babies <text>|<text> - Generates I like babies meme
 #   bozz lenny meme <text>|<text> - Generates Lenny meme
+#   bozz shanley meme <text>|<text> - Generates stoned Shanley meme
 #
 # Author:
 #   bobanj, ericjsilva
@@ -144,6 +145,9 @@ module.exports = (robot) ->
   
   robot.respond /lenny meme (.+)/i, (msg) ->
     makeCustomSplitMeme(msg, 'IeniJw')
+
+  robot.respond /shanley meme (.+)/i, (msg) ->
+    makeCustomSplitMeme(msg, 'gMDJIQ')
 
 makeCustomSplitMeme = (msg, code) ->
   text = msg.match[1]
