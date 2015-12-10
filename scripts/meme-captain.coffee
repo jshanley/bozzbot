@@ -143,7 +143,7 @@ module.exports = (robot) ->
     makeCustomSplitMeme(msg, 'qkqezg')
   
   robot.respond /lenny meme (.+)/i, (msg) ->
-    makeCustomSplitMeme(msg, 'nNQ7pg')
+    makeCustomSplitMeme(msg, 'IeniJw')
 
 makeCustomSplitMeme = (msg, code) ->
   text = msg.match[1]
