@@ -28,12 +28,13 @@
 #   bozz IF <text> THAT'D BE GREAT - Generates Lumberg
 #   bozz MUCH <text> (SO|VERY) <text> - Generates Doge
 #   bozz <text> EVERYWHERE - Generates Buzz Lightyear
-#   bozz steve meme <text>|<text> - Generates Steve meme
+#   bozz steve <text>|<text> - Generates Steve meme
 #   bozz chris's dad <text>|<text> - Generates Chris's dad meme
 #   bozz buddy <text>|<text> - Generates Jack Bozz buddy meme
 #   bozz i like babies <text>|<text> - Generates I like babies meme
-#   bozz lenny meme <text>|<text> - Generates Lenny meme
-#   bozz shanley meme <text>|<text> - Generates stoned Shanley meme
+#   bozz lenny <text>|<text> - Generates thumbs up Lenny meme
+#   bozz shanley <text>|<text> - Generates stoned Shanley meme
+#   bozz jake <text>|<text> - Generates steamroller Jake meme
 #
 # Author:
 #   bobanj, ericjsilva
@@ -131,7 +132,7 @@ module.exports = (robot) ->
     memeGenerator msg, 'yDcY5w', msg.match[1], msg.match[2], (url) ->
       msg.send url
 
-  robot.respond /steve meme (.+)/i, (msg) ->
+  robot.respond /steve (.+)/i, (msg) ->
     makeCustomSplitMeme(msg, 'iWBIPQ')
 
   robot.respond /chris's dad (.+)/i, (msg) ->
@@ -143,11 +144,14 @@ module.exports = (robot) ->
   robot.respond /i like babies (.+)/i, (msg) ->
     makeCustomSplitMeme(msg, 'qkqezg')
   
-  robot.respond /lenny meme (.+)/i, (msg) ->
+  robot.respond /lenny (.+)/i, (msg) ->
     makeCustomSplitMeme(msg, 'IeniJw')
 
-  robot.respond /shanley meme (.+)/i, (msg) ->
+  robot.respond /shanley (.+)/i, (msg) ->
     makeCustomSplitMeme(msg, 'gMDJIQ')
+
+  robot.respond /jake (.+)/i, (msg) ->
+    makeCustomSplitMeme(msg, 's03E1Q')
 
 makeCustomSplitMeme = (msg, code) ->
   text = msg.match[1]
