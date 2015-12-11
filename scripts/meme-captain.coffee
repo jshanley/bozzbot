@@ -36,6 +36,7 @@
 #   bozz shanley <text>|<text> - Generates stoned Shanley meme
 #   bozz jake <text>|<text> - Generates steamroller Jake meme
 #   bozz jordan <text>|<text> - Generates thumbs up Jordan meme
+#   bozz chris <text>|<text> - Generates muppet Chris meme
 #
 # Author:
 #   bobanj, ericjsilva
@@ -156,6 +157,9 @@ module.exports = (robot) ->
 
   robot.respond /jordan (.+)/i, (msg) ->
     makeCustomSplitMeme(msg, 'JCIQgQ')
+
+  robot.respond /chris (.+)/i, (msg) ->
+    makeCustomSplitMeme(msg, 'h58ccw')
 
 makeCustomSplitMeme = (msg, code) ->
   text = msg.match[1]
