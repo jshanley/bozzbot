@@ -37,6 +37,7 @@
 #   bozz jake <text>|<text> - Generates steamroller Jake meme
 #   bozz jordan <text>|<text> - Generates thumbs up Jordan meme
 #   bozz chris <text>|<text> - Generates muppet Chris meme
+#   bozz agent smith <text>|<text> - Generates Agent Smith Steve meme
 #
 # Author:
 #   bobanj, ericjsilva
@@ -160,6 +161,9 @@ module.exports = (robot) ->
 
   robot.respond /chris (.+)/i, (msg) ->
     makeCustomSplitMeme(msg, 'krX-Tw')
+
+  robot.respond /agent smith (.+)/i, (msg) ->
+    makeCustomSplitMeme(msg, 'y2Tm7g')
 
 makeCustomSplitMeme = (msg, code) ->
   text = msg.match[1]
