@@ -159,7 +159,7 @@ module.exports = (robot) ->
     makeCustomSplitMeme(msg, 'JCIQgQ')
 
   robot.respond /chris (.+)/i, (msg) ->
-    makeCustomSplitMeme(msg, 'h58ccw')
+    makeCustomSplitMeme(msg, 'krX-Tw')
 
 makeCustomSplitMeme = (msg, code) ->
   text = msg.match[1]
